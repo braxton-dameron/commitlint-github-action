@@ -18,6 +18,7 @@ const configPath = resolve(process.env.GITHUB_WORKSPACE, getInput('configFile'))
 const getCommitDepth = () => {
   const commitDepthString = getInput('commitDepth')
   if (!commitDepthString?.trim()) return null
+
   const commitDepth = parseInt(commitDepthString, 10)
   return Number.isNaN(commitDepth) ? null : Math.max(commitDepth, 0)
 }
